@@ -14,19 +14,25 @@ terrazzo                si/no                           TINYINT -> NULL
 classe_vista            es. panoramica/normale          VARCHAR(20) -> NULL
 condizionata            si/no                           TINYINT -> NOTNULL
 frigo_bar               si/no                           TINYINT -> NULL
-numero_prenotazioni     numero intero                   INT -> AUTO INCREMENT, NOTNULL, DEFAULT(0)
+prezzo_unitario         valuta (decimale)               DECIMAL(3, 2) -> NULL
 
-check-in                data                            DATETIME -> NOTNULL
+sconto_online           numero con virgola              DECIMAL(2, 2) -> NULL, DEFAULT(0)
+sconto_under4           numero con virgola              DECIMAL(2, 2) -> NULL, DEFAULT(0)
+plus_alta_stagione      numero con virgola              DECIMAL(2, 2) -> NULL, DEFAULT(0)
+
+prenotazione-in         data                            DATETIME -> NULL
+prenotazione-out        data                            DATETIME -> NULL
+check-in                data                            DATETIME -> NULL
 check-out               data                            DATETIME -> NULL
 codice_prenotazione     stringa                         VARCHAR(20) -> NOTNULL, INDEX, UNIQUE
 numero_ospiti           numero intero                   TINYINT -> NOTNULL, DEFAULT(1)
 modalità_pagamento      es. carta/contanti              VARCHAR(10) -> NULL          
-importo                 valuta (decimale)               DECIMAL(5, 2) -> NULL
 
+titolare_prenotazione   si/no                           TINYINT -> NOTNULL, INDEX, DEFAULT(no)
 nome_ospite             stringa                         VARCHAR(20) -> NOTNULL
 cognome_ospite          stringa                         VARCHAR(20) -> NOTNULL
 data_nascita_ospite     data                            DATE -> NOTNULL
-tipo_documento_ospite   es.patente/passaporto           VARCHAR(10) -> NOTNULL
+tipo_documento_ospite   es. patente/passaporto          VARCHAR(10) -> NOTNULL
 id_documento_ospite     stringa                         VARCHAR(20) -> NOTNULL
 scadenza_documento      data                            DATE -> NOTNULL
 
