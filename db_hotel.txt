@@ -4,10 +4,10 @@ Struttura DB camere hotel:
 id                      numero intero                   INT -> PRIMARY KEY (AUTO INCREMENT, NOTNULL, INDEX, UNIQUE)
 codice_stanza           stringa                         VARCHAR(20) -> NOTNULL, INDEX, UNIQUE
 dimensioni              in mq                           TINYINT -> NULL
-classe_stanza           es.suite/premium/normale        VARCHAR(10) -> NOTNULL
+classe_stanza           es.suite/premium/basic          VARCHAR(10) -> NOTNULL, DEFAULT(basic)
 piano                   numero intero                   TINYINT -> NOTNULL
 numero_letti            numero intero                   TINYINT -> NOTNULL, INDEX, DEFAULT(1)
-dimensione_letti        es. king/francese/standard      VARCHAR(10) -> NULL     
+dimensione_letti        es. king/francese/standard      VARCHAR(10) -> NULL, DEFAULT(standard)     
 numero_bagni            numero intero                   TINYINT -> NOTNULL, DEFAULT(1)
 idromassaggio           si/no                           TINYINT -> NULL
 terrazzo                si/no                           TINYINT -> NULL
@@ -17,17 +17,18 @@ frigo_bar               si/no                           TINYINT -> NULL
 numero_prenotazioni     numero intero                   INT -> AUTO INCREMENT, NOTNULL, DEFAULT(0)
 
 check-in                data                            DATETIME -> NOTNULL
-check-out               data                            DATETIME -> NOTNULL
+check-out               data                            DATETIME -> NULL
 codice_prenotazione     stringa                         VARCHAR(20) -> NOTNULL, INDEX, UNIQUE
 numero_ospiti           numero intero                   TINYINT -> NOTNULL, DEFAULT(1)
+modalità_pagamento      es. carta/contanti              VARCHAR(10) -> NULL          
+importo                 valuta (decimale)               DECIMAL(5, 2) -> NULL
+
 nome_ospite             stringa                         VARCHAR(20) -> NOTNULL
 cognome_ospite          stringa                         VARCHAR(20) -> NOTNULL
 data_nascita_ospite     data                            DATE -> NOTNULL
 tipo_documento_ospite   es.patente/passaporto           VARCHAR(10) -> NOTNULL
 id_documento_ospite     stringa                         VARCHAR(20) -> NOTNULL
 scadenza_documento      data                            DATE -> NOTNULL
-modalità_pagamento      es. carta/contanti              VARCHAR(10) -> NOTNULL          
-importo                 valuta (decimale)               DECIMAL(5, 2) -> NOTNULL
 
 
 
