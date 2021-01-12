@@ -7,18 +7,20 @@ dimensioni              in mq                           TINYINT -> NULL
 classe_stanza           es.suite/premium/normale        VARCHAR(10) -> NOTNULL
 piano                   numero intero                   TINYINT -> NOTNULL
 numero_letti            numero intero                   TINYINT -> NOTNULL, INDEX, DEFAULT(1)
-dimensioni_letti        es. king/francese/standard      VARCHAR(10) -> NULL     
+dimensione_letti        es. king/francese/standard      VARCHAR(10) -> NULL     
 numero_bagni            numero intero                   TINYINT -> NOTNULL, DEFAULT(1)
-vasca_idromassaggio     si/no                           TINYINT -> NULL
+idromassaggio           si/no                           TINYINT -> NULL
 terrazzo                si/no                           TINYINT -> NULL
 classe_vista            es. panoramica/normale          VARCHAR(20) -> NULL
 condizionata            si/no                           TINYINT -> NOTNULL
 frigo_bar               si/no                           TINYINT -> NULL
+numero_prenotazioni     numero intero                   INT -> AUTO INCREMENT, NOTNULL, DEFAULT(0)
+
 check-in                data                            DATETIME -> NOTNULL
 check-out               data                            DATETIME -> NOTNULL
+codice_prenotazione     stringa                         VARCHAR(20) -> NOTNULL, INDEX, UNIQUE
 numero_ospiti           numero intero                   TINYINT -> NOTNULL, DEFAULT(1)
 numero_minori           numero intero                   TINYINT -> NOTNULL
-
 nome_ospite             stringa                         VARCHAR(20) -> NOTNULL
 cognome_ospite          stringa                         VARCHAR(20) -> NOTNULL
 data_nascita_ospite     data                            DATE -> NOTNULL
