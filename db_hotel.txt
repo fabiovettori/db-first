@@ -20,7 +20,6 @@ check-in                data                            DATETIME -> NOTNULL
 check-out               data                            DATETIME -> NOTNULL
 codice_prenotazione     stringa                         VARCHAR(20) -> NOTNULL, INDEX, UNIQUE
 numero_ospiti           numero intero                   TINYINT -> NOTNULL, DEFAULT(1)
-numero_minori           numero intero                   TINYINT -> NOTNULL
 nome_ospite             stringa                         VARCHAR(20) -> NOTNULL
 cognome_ospite          stringa                         VARCHAR(20) -> NOTNULL
 data_nascita_ospite     data                            DATE -> NOTNULL
