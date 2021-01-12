@@ -1,0 +1,24 @@
+Struttura DB concessionario:
+
+id                             INT                        PRIMARY_KEY (=> AUTO_INCREMENT, UNIQUE, INDEX, NOTNULL)
+targa                          VARCHAR(20)                NULL, UNIQUE
+marca                          VARCHAR(20)                NOTNULL
+modello                        VARCHAR(20)                NOTNULL, INDEX
+versione                       VARCHAR(20)                NULL
+chilometraggio                 MEDIUMINT                  NOTNULL
+carburante                     VARCHAR(10)                NOTNULL, INDEX
+potenza                        SMALL                      NOTNULL
+classe_emissioni               TINYINT                    NULL
+anno_immatricolazione          YEAR                       NOTNULL
+per_neopatentati               TINYINT                    NULL, DEFAULT(0)
+colore_carrozzeria             VARCHAR(20)                NOTNULL        
+tipo_vernice (metallizzato)    TINYINT                    NULL
+colore_interni                 VARCHAR(20)                NOTNULL
+materiale_interni              VARCHAR(20)                NULL
+numero_porte                   TINYINT                    NOTNULL 
+numero_posti                   TINYINT                    NOTNULL 
+cambio                         VARCHAR(15)                NOTNULL 
+stato                          VARCHAR(15)                NOTNULL 
+prezzo_acquisto                MEDIUMINT                  NOTNULL
+prezzo_vendita                 MEDIUMINT                  NOTNULL
+note                           TEXT                       NULL
